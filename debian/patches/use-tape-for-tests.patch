@@ -1,0 +1,34 @@
+Description: This patch adapts tape for tests.
+Author: Utkarsh Gupta <guptautkarsh2102@gmail.com>
+Forwarded: not-needed
+Last-Update: 2020-11-27
+
+--- a/test.js
++++ b/test.js
+@@ -1,9 +1,10 @@
+-import test from 'ava';
+-import globals from '.';
++const test = require('tape');
++const globals = require('.');
+ 
+ test('main', t => {
+ 	t.is(typeof globals, 'object');
+ 	t.true(Object.keys(globals).length > 10 && Object.keys(globals).length < 1000);
++	t.end();
+ });
+ 
+ test('ensure alphabetical order', t => {
+@@ -14,6 +15,7 @@
+ 			`The \`${env}\` keys don't have the correct alphabetical order`
+ 		);
+ 	}
++	t.end();
+ });
+ 
+ test('`node` is `nodeBuiltin` with CommonJS arguments', t => {
+@@ -37,4 +39,5 @@
+ 			`The builtin ${builtin} is not a CommonJS argument`
+ 		);
+ 	}
++	t.end();
+ });

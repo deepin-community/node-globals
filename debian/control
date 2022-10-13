@@ -1,0 +1,27 @@
+Source: node-globals
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Pirate Praveen <praveen@debian.org>,
+           Utkarsh Gupta <guptautkarsh2102@gmail.com>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               nodejs,
+               node-tape <!nocheck>,
+               dh-sequence-nodejs
+Standards-Version: 4.5.1
+Vcs-Browser: https://salsa.debian.org/js-team/node-globals
+Vcs-Git: https://salsa.debian.org/js-team/node-globals.git
+Homepage: https://github.com/sindresorhus/globals
+Rules-Requires-Root: no
+
+Package: node-globals
+Architecture: all
+Depends: ${misc:Depends},
+         nodejs
+Multi-Arch: foreign
+Description: Global identifiers from different JavaScript environments
+ Extracted from JSHint and ESLint and merged.
+ It's just a JSON file, so it can be used in whatever environment one likes.
+ .
+ Node.js is an event-based server-side JavaScript engine.
